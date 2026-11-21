@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ivoo Agency Pack Mariage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Playfair+Display:wght@700;800&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Pinyon+Script&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Layout: style éditorial mariage, photo plein écran en ouverture, sections crème et olive en alternance, colonnes texte/image, angles droits, filets fins */
+  --cream:#f4f0eb; --sand:#ebe5dc; --olive:#57513f; --olive-deep:#45402f; --ink:#3b382e; --muted:#7a7466; --line:#d6cdbf; --white:#fffdf9;
+  --display:"Bellefair", "Times New Roman", serif; --italic:"Cormorant Garamond", Georgia, serif; --script:"Pinyon Script", cursive; --body:"Raleway", system-ui, sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--cream);color:var(--ink);font-family:var(--body);font-weight:300;font-size:16px;line-height:1.75}
+a{color:inherit}
+img,video{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+section{padding:84px 0}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.15;text-wrap:balance;letter-spacing:.01em}
+h1{font-size:clamp(2.2rem,6vw,3.5rem)}
+h2{font-size:clamp(1.8rem,4.2vw,2.5rem)}
+h3{font-size:1.35rem}
+p{max-width:62ch}
+b{font-weight:600}
+.eyebrow{font-family:var(--italic);font-style:italic;font-size:1.15rem;color:var(--muted);margin-bottom:10px}
+.btn{display:inline-block;background:var(--white);color:var(--ink);text-decoration:none;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;padding:15px 30px;border-radius:999px;border:1px solid var(--white)}
+.btn.dark{background:var(--olive);color:var(--white);border-color:var(--olive)}
+.btn:focus-visible,.ghost:focus-visible,.nav a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+@media (prefers-reduced-motion:no-preference){.btn{transition:background .2s,color .2s}.btn:hover{background:transparent;color:var(--white)}.btn.dark:hover{background:transparent;color:var(--olive)}}
+
+/* Barre du haut */
+.nav{background:var(--cream);border-bottom:1px solid var(--line)}
+.nav .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:68px}
+.nav .links{display:flex;gap:22px;font-size:.78rem}
+.nav .links a,.nav .social a{text-decoration:none;color:var(--muted)}
+.nav .logo{font-family:var(--script);font-size:1.9rem;color:var(--ink);text-decoration:none;line-height:1}
+.nav .social{display:flex;gap:18px;justify-content:flex-end;font-size:.78rem}
+@media (max-width:760px){.nav .links{display:none}.nav .wrap{grid-template-columns:1fr auto}.nav .logo{justify-self:start}}
+
+/* Ouverture plein écran */
+.hero{position:relative;color:var(--white);text-align:center;background:var(--olive-deep) url("img/hero-bg.jpg") center 30%/cover no-repeat;padding:96px 0 84px}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,25,18,.72),rgba(28,25,18,.82))}
+.hero h1,.hero p,.hero .brand,.hero .eyebrow,.hero .tag,.hero .slots{text-shadow:0 1px 12px rgba(0,0,0,.45)}
+.hero .wrap{position:relative;max-width:760px;display:flex;flex-direction:column;align-items:center}
+.hero .brand{font-family:var(--italic);font-style:italic;font-size:1.25rem;margin-bottom:6px;color:#f1e9dc}
+.hero .eyebrow{color:#e7dccb;font-family:var(--body);font-style:normal;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:22px}
+.hero h1{font-family:"Playfair Display", Georgia, serif;font-weight:800;font-size:clamp(2.6rem,8.5vw,4.6rem);line-height:1.08;letter-spacing:-.01em}
+.hero p{color:#f1e9dc;margin:20px auto 0;font-size:1rem}
+.tag{display:inline-block;margin-top:22px;padding:10px 20px;border-top:1px solid rgba(255,253,249,.5);border-bottom:1px solid rgba(255,253,249,.5);font-size:.9rem;letter-spacing:.04em}
+.tag b{font-weight:600}
+.cd-label{font-family:var(--italic);font-style:italic;font-size:1.1rem;margin-top:28px}
+.cd{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;justify-content:center}
+.cd .u{min-width:70px;padding:12px 8px;border:1px solid rgba(255,253,249,.45);background:rgba(255,253,249,.06);text-align:center}
+.cd .n{display:block;font-family:var(--display);font-size:2rem;line-height:1;font-variant-numeric:tabular-nums}
+.cd .l{display:block;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;margin-top:6px;opacity:.85}
+.ctas{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:center;margin-top:30px}
+.ghost{color:var(--white);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(255,253,249,.6);padding-bottom:3px}
+.slots{display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center;margin-top:26px;font-size:.85rem;color:#f1e9dc}
+.dots{display:inline-flex;gap:5px}
+.dots i{width:7px;height:7px;border-radius:50%;background:#f1e9dc;display:block}
+
+/* Intro en deux colonnes : titre à gauche, texte à droite */
+.intro{display:grid;gap:18px 60px;align-items:end;margin-bottom:44px}
+@media (min-width:760px){.intro{grid-template-columns:1fr 1fr}}
+.intro p{color:var(--muted);font-size:.95rem}
+
+/* L'offre */
+.offer{display:grid;gap:40px;align-items:start}
+@media (min-width:760px){.offer{grid-template-columns:.85fr 1.15fr}}
+.offer-img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.deadline b{color:var(--ink)}
+.price-card{display:grid;gap:22px}
+.price{font-family:var(--display);font-size:clamp(2.8rem,8vw,3.6rem);line-height:1;color:var(--ink);padding-bottom:18px;border-bottom:1px solid var(--line)}
+.price small{display:block;font-family:var(--italic);font-style:italic;font-size:1.15rem;color:var(--muted);margin-top:8px}
+ul.list{list-style:none;display:grid}
+ul.list li{padding:11px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.bonus{background:var(--sand);padding:18px 20px;font-size:.95rem}
+
+/* Galerie */
+.film{width:100%;aspect-ratio:16/9;object-fit:cover;background:#2c281e;margin-bottom:20px}
+.alt{background:var(--sand)}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media (min-width:640px){.gallery{grid-template-columns:repeat(3,1fr);gap:20px}}
+.gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;background:var(--line)}
+.ig{display:inline-block;margin-top:30px;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:3px;font-weight:500}
+
+/* Pourquoi nous choisir : section olive */
+.dark{background:var(--olive);color:var(--white)}
+.dark .eyebrow{color:#d9d0bf}
+.dark p{color:#e6dfd2}
+.bts{display:grid;gap:48px;align-items:center}
+@media (min-width:760px){.bts{grid-template-columns:1.1fr .9fr}}
+.bts-text p.lead{margin:16px 0 26px;font-size:.95rem}
+.why{list-style:none;counter-reset:w;display:grid}
+.why li{counter-increment:w;display:grid;grid-template-columns:38px 1fr;padding:16px 0;border-bottom:1px solid rgba(255,253,249,.25)}
+.why li::before{content:"0" counter(w) ".";font-family:var(--italic);font-style:italic;font-size:1rem;color:#d9d0bf}
+.why h3{font-family:var(--body);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
+.why p{font-size:.92rem;margin-top:4px}
+.bts-video{width:100%;max-width:380px;justify-self:center;aspect-ratio:9/16;object-fit:cover;background:#2c281e}
+
+/* Options */
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+td{padding:16px 0;border-bottom:1px solid var(--line);vertical-align:top}
+tr:first-child td{border-top:1px solid var(--line)}
+td:last-child{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;font-family:var(--display);font-size:1.15rem;padding-left:16px}
+.note{margin-top:14px;color:var(--muted);font-size:.85rem;font-family:var(--italic);font-style:italic}
+
+/* Étapes */
+.steps{counter-reset:s;list-style:none;display:grid}
+.steps li{counter-increment:s;display:grid;grid-template-columns:48px 1fr;padding:18px 0;border-bottom:1px solid var(--line)}
+.steps li:first-child{border-top:1px solid var(--line)}
+.steps li::before{content:"0" counter(s) ".";font-family:var(--italic);font-style:italic;font-size:1.1rem;color:var(--muted)}
+.steps b{display:block;font-weight:500;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
+.steps span{color:var(--muted);font-size:.93rem}
+
+/* Questions */
+details{border-bottom:1px solid var(--line);padding:18px 0}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{cursor:pointer;font-family:var(--display);font-size:1.2rem;list-style-position:outside}
+details p{color:var(--muted);margin-top:10px;font-size:.95rem}
+
+/* Dernier appel : photo de fond et carte crème */
+.final{position:relative;background:var(--olive-deep) url("img/final-bg.jpg") center 25%/cover no-repeat;padding:110px 0}
+.final::before{content:"";position:absolute;inset:0;background:rgba(40,36,26,.35)}
+.final .card{position:relative;background:var(--cream);max-width:620px;margin:0 auto;padding:52px 30px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.final .card::before{content:"";position:absolute;inset:10px;border:1px solid var(--line);pointer-events:none}
+.final .cd-label{color:var(--muted)}
+.final .cd .u{border-color:var(--line);background:transparent;color:var(--ink)}
+.final p{color:var(--muted);margin:22px auto 26px;font-size:.95rem}
+.final .wa{margin:18px 0 0;font-size:.85rem}
+
+footer{background:var(--olive);color:#e6dfd2;padding:30px 0;font-size:.8rem;text-align:center;letter-spacing:.04em}
+footer .logo{font-family:var(--script);font-size:1.8rem;display:block;color:var(--white);margin-bottom:6px}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Navigation">
+  <div class="wrap">
+    <div class="links"><a href="#offre">L'offre</a><a href="#galerie">Galerie</a><a href="#pourquoi">Pourquoi nous choisir</a><a href="#questions">Questions</a></div>
+    <a class="logo" href="#">Ivoo Agency</a>
+    <div class="social"><a href="https://www.instagram.com/ivooagency" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/237694790067" target="_blank" rel="noopener">WhatsApp</a></div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand">Ivoo Agency · Douala</div>
+    <div class="eyebrow">Offre valable jusqu'au 31 décembre 2026</div>
+    <h1>Votre date est disponible. Votre budget n'a pas besoin d'être complet !</h1>
+    <p>Une réservation de 50 000 FCFA suffit pour garder votre date. Le forfait complet est de 200 000 FCFA, payable en trois fois.</p>
+    <div class="tag">Réservation <b>50 000 FCFA</b> · Forfait complet <b>200 000 FCFA</b></div>
+    <p class="cd-label">L'offre se termine dans :</p>
+    <div class="cd" data-countdown aria-live="off">
+      <div class="u"><span class="n" data-d>--</span><span class="l">jours</span></div>
+      <div class="u"><span class="n" data-h>--</span><span class="l">heures</span></div>
+      <div class="u"><span class="n" data-m>--</span><span class="l">minutes</span></div>
+      <div class="u"><span class="n" data-s>--</span><span class="l">secondes</span></div>
+    </div>
+    <div class="ctas">
+      <a class="btn" href="https://wa.me/237694790067?text=Bonjour%20Ivoo%20Agency%2C%20je%20veux%20r%C3%A9server%20le%20Pack%20Mariage%20%C3%A0%20200%20000%20FCFA.%20Notre%20date%20%3A%20" target="_blank" rel="noopener">Réserver sur WhatsApp</a>
+      <a class="ghost" href="#offre">Voir le pack ↓</a>
+    </div>
+    <div class="slots"><span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span> 10 couples seulement, jusqu'au 31 décembre</div>
+  </div>
+</header>
+
+<section id="offre">
+  <div class="wrap">
+    <div class="intro">
+      <div><div class="eyebrow">L'offre</div><h2>Pack Mariage Essentiel</h2></div>
+      <p class="deadline">Offre valable pour toute réservation faite avant le <b>31 décembre 2026</b>, pour un mariage en 2026 ou en 2027. Après cette date, le pack ne sera plus proposé à ce prix.</p>
+    </div>
+    <div class="offer">
+      <img class="offer-img" src="img/hero.jpg" alt="Une mariée embrasse le front de son époux, photo Ivoo Agency">
+      <div class="price-card">
+        <div class="price">200 000 <small>FCFA, prix final à Douala</small></div>
+        <ul class="list">
+          <li>Un photographe et un vidéaste présents toute la journée</li>
+          <li>Le jour du mariage civil en entier : mairie, séance photo du couple, réception et soirée</li>
+          <li>Pour les mariages jusqu'à 100 invités</li>
+          <li>300 photos minimum, retouchées une par une</li>
+          <li>Le film vidéo de votre journée, jusqu'à 45 minutes</li>
+          <li>Un teaser de 2 à 3 minutes avec les temps forts, idéal pour vos statuts et réseaux</li>
+          <li>Galerie en ligne privée à partager avec la famille</li>
+          <li>Clé USB avec toutes les photos et la vidéo en haute définition</li>
+          <li>Livraison en 21 jours maximum</li>
+          <li>Contrat écrit signé : date bloquée, contenu garanti</li>
+        </ul>
+        <div class="bonus"><b>Paiement en 3 fois :</b> 50 000 FCFA pour réserver votre date, 125 000 FCFA avant le jour J, 25 000 FCFA à la livraison.</div>
+        <div><a class="btn dark" href="https://wa.me/237694790067?text=Bonjour%20Ivoo%20Agency%2C%20je%20veux%20r%C3%A9server%20le%20Pack%20Mariage%20%C3%A0%20200%20000%20FCFA.%20Notre%20date%20%3A%20" target="_blank" rel="noopener">Je bloque ma date</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="galerie">
+  <div class="wrap">
+    <div class="intro">
+      <div><div class="eyebrow">Mon travail</div><h2>Quelques mariages couverts</h2></div>
+      <p>Retrouvez tous mes reportages et films sur Instagram.</p>
+    </div>
+    <video class="film" src="vid/film.mp4" poster="vid/film.jpg" controls playsinline preload="metadata" aria-label="Film de mariage réalisé par Ivoo Agency"></video>
+    <div class="gallery">
+      <img src="img/g1.jpg" alt="Couple de mariés qui rient en ville" loading="lazy">
+      <img src="img/g2.jpg" alt="Couple en tenue traditionnelle devant un miroir doré" loading="lazy">
+      <img src="img/g3.jpg" alt="Portrait d'une mariée en voile" loading="lazy">
+      <img src="img/g4.jpg" alt="Mariée au foulard doré et éventail jaune" loading="lazy">
+      <img src="img/g5.jpg" alt="Mariée en kente avec son bouquet, de nuit" loading="lazy">
+      <img src="img/g6.jpg" alt="Couple en vert enlacé, de nuit" loading="lazy">
+    </div>
+    <a class="ig" href="https://www.instagram.com/ivooagency" target="_blank" rel="noopener">@ivooagency sur Instagram →</a>
+  </div>
+</section>
+
+<section class="dark" id="pourquoi">
+  <div class="wrap bts">
+    <div class="bts-text">
+      <div class="eyebrow">Pourquoi nous choisir</div>
+      <h2>Une équipe dévouée, aux petits soins pour vous</h2>
+      <p class="lead">Regardez comment nous travaillons le jour J, des préparatifs jusqu'à la dernière image.</p>
+      <ol class="why">
+        <li><div><h3>Une vraie équipe</h3><p>Un photographe et un vidéaste qui travaillent ensemble toute la journée, pour qu'aucun moment ne soit manqué.</p></div></li>
+        <li><div><h3>Prêts avant vous</h3><p>Matériel vérifié, lumière installée, trajets prévus : le jour J, vous n'avez à penser à rien.</p></div></li>
+        <li><div><h3>Aux petits soins</h3><p>On vous guide pour les poses, on vous met à l'aise et on sait se faire discrets pendant les moments forts.</p></div></li>
+        <li><div><h3>Prix fixé d'avance</h3><p>Pas de frais cachés le jour J. Tout est écrit dans le contrat.</p></div></li>
+      </ol>
+    </div>
+    <video class="bts-video" src="vid/bts.mp4" poster="vid/bts.jpg" controls playsinline preload="metadata" aria-label="Coulisses d'un mariage avec l'équipe Ivoo Agency"></video>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="intro">
+      <div><div class="eyebrow">Options</div><h2>Pour aller plus loin</h2></div>
+    </div>
+    <table>
+      <tr><td>Séance photo pré-mariage (1 h, lieu au choix à Douala)</td><td>+ 40 000</td></tr>
+      <tr><td>Couverture de la dot (autre jour)</td><td>+ 100 000</td></tr>
+      <tr><td>Save the date vidéo original, conçu sur mesure</td><td>+ 40 000</td></tr>
+      <tr><td>Mariage de plus de 100 invités</td><td>Sur devis</td></tr>
+      <tr><td>Album photo imprimé 30 × 30</td><td>+ 50 000</td></tr>
+    </table>
+    <p class="note">Montants en FCFA.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="intro">
+      <div><div class="eyebrow">Comment réserver</div><h2>Votre date bloquée en 3 jours</h2></div>
+    </div>
+    <ol class="steps">
+      <li><div><b>Écrivez-moi sur WhatsApp</b><span>Donnez votre date et vos lieux de cérémonie.</span></div></li>
+      <li><div><b>On en parle 20 minutes</b><span>Par appel ou autour d'un café à Douala, pour comprendre ce que vous voulez.</span></div></li>
+      <li><div><b>Acompte de 50 000 FCFA</b><span>Par Orange Money ou MTN MoMo. Votre date est bloquée et le contrat signé.</span></div></li>
+      <li><div><b>125 000 FCFA avant le jour J</b><span>Le deuxième paiement, puis on cale ensemble le programme de la journée.</span></div></li>
+      <li><div><b>Le jour J</b><span>Photographe et vidéaste sont là de la mairie jusqu'à la fin de la soirée.</span></div></li>
+      <li><div><b>Livraison sous 21 jours</b><span>Galerie en ligne, film, teaser et clé USB. Vous réglez les 25 000 FCFA restants à la livraison.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="questions">
+  <div class="wrap">
+    <div class="intro">
+      <div><div class="eyebrow">Questions</div><h2>Questions fréquentes</h2></div>
+    </div>
+    <details><summary>Peut-on payer en plusieurs fois ?</summary><p>Oui, en trois fois : 50 000 FCFA à la réservation, 125 000 FCFA avant le jour du mariage, 25 000 FCFA à la livraison des photos et de la vidéo.</p></details>
+    <details><summary>Notre mariage est en 2027, peut-on réserver maintenant ?</summary><p>Oui, c'est même le bon moment. Réservez avant le 31 décembre 2026 avec 50 000 FCFA, et le prix de 200 000 FCFA reste garanti pour votre date en 2027.</p></details>
+    <details><summary>La dot et le mariage religieux sont-ils inclus ?</summary><p>Le pack couvre le jour du mariage civil, de la mairie à la soirée. Si votre dot a lieu un autre jour, on peut l'ajouter en option pour 100 000 FCFA. Pour un mariage religieux un autre jour, écrivez-moi et on en parle.</p></details>
+    <details><summary>Vous vous déplacez hors de Douala ?</summary><p>Oui. Le transport et l'hébergement éventuel sont ajoutés au devis, sans autre supplément.</p></details>
+    <details><summary>Que se passe-t-il si vous êtes malade le jour J ?</summary><p>Je fais appel à un photographe partenaire de confiance, et le contrat le prévoit noir sur blanc.</p></details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <div class="card">
+      <h2>Plus que quelques jours avant le 31 décembre.</h2>
+      <p class="cd-label">Il reste :</p>
+      <div class="cd" data-countdown aria-live="off">
+        <div class="u"><span class="n" data-d>--</span><span class="l">jours</span></div>
+        <div class="u"><span class="n" data-h>--</span><span class="l">heures</span></div>
+        <div class="u"><span class="n" data-m>--</span><span class="l">minutes</span></div>
+        <div class="u"><span class="n" data-s>--</span><span class="l">secondes</span></div>
+      </div>
+      <p>L'offre s'arrête le 31 décembre 2026 ou dès que les 10 places sont prises. Écrivez-moi aujourd'hui avec votre date, je vous réponds dans la journée.</p>
+      <a class="btn dark" href="https://wa.me/237694790067?text=Bonjour%20Ivoo%20Agency%2C%20je%20veux%20r%C3%A9server%20le%20Pack%20Mariage%20%C3%A0%20200%20000%20FCFA.%20Notre%20date%20%3A%20" target="_blank" rel="noopener">Réserver sur WhatsApp</a>
+      <p class="wa">WhatsApp : +237 694 79 00 67</p>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span class="logo">Ivoo Agency</span>Ivoo Agency · Photographe et vidéaste de mariage à Douala · <a href="https://www.instagram.com/ivooagency" target="_blank" rel="noopener">@ivooagency</a></div></footer>
+<script>
+(function(){
+  var end=new Date("2026-12-31T23:59:59+01:00").getTime();
+  var boxes=document.querySelectorAll("[data-countdown]");
+  function pad(n){return n<10?"0"+n:""+n}
+  function tick(){
+    var t=end-Date.now();
+    boxes.forEach(function(b){
+      if(t<=0){b.innerHTML='<span class="n" style="font-size:1.4rem">Offre terminée</span>';var lb=b.previousElementSibling;if(lb&&lb.classList.contains("cd-label"))lb.style.display="none";return;}
+      var d=Math.floor(t/864e5),h=Math.floor(t%864e5/36e5),m=Math.floor(t%36e5/6e4),s=Math.floor(t%6e4/1e3);
+      b.querySelector("[data-d]").textContent=d;
+      b.querySelector("[data-h]").textContent=pad(h);
+      b.querySelector("[data-m]").textContent=pad(m);
+      b.querySelector("[data-s]").textContent=pad(s);
+    });
+    if(t>0)setTimeout(tick,1000);
+  }
+  tick();
+})();
+</script>
+</body>
+</html>
